@@ -7,16 +7,26 @@ const orm = {
             connection.query(queryString, (err, result) => {
                 if (err) reject (err);
                 resolve (result);
-            });
-        });
+            })
+        })
     },
-    insertOne: function(item, table){
-        const queryString = "";
-        console.log("insertOne");
+    insertOne: (item, table) => {
+        const queryString = "INSERT INTO " + table + " (food_name, eaten) VALUES (" + item + ", false);";
+        return new Promise((resolve, reject) => {
+            connection.query(queryString, (err, result) => {
+                if (err) reject (err);
+                resolve (result);
+            })
+        })
     },
-    updateOne: function(item, table, eaten){
-        const queryString = "";
-        console.log("updateOne");
+    eatOne: (item, table) => {
+        const queryString = "UPDATE " + table + " SET " + "eaten=true WHERE " + "food_name=" + item + ";";
+        return new Promise((resolve, reject) => {
+            connection.query(queryString, (err, result) => {
+                if (err) reject (err);
+                resolve (result);
+            })
+        })
     }
 };
 module.exports = orm;
