@@ -1,4 +1,4 @@
-const foodEater = require("../models/food-eater.js");
+const foodEater = require("../models/food_eater.js");
 const express = require("express");
 const router = express.Router();
 
