@@ -20,7 +20,7 @@ const orm = {
         })
     },
     eatOne: (item, table) => {
-        const queryString = "UPDATE " + table + " SET " + "eaten=true WHERE " + "food_name=" + item + ";";
+        const queryString = "UPDATE " + table + " SET " + "eaten=true WHERE " + "id=" + itemId + ";";
         return new Promise((resolve, reject) => {
             connection.query(queryString, (err, result) => {
                 if (err) reject (err);

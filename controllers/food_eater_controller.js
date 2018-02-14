@@ -3,14 +3,28 @@ const express = require("express");
 const router = express.Router();
 // get route for getting all foods
 router.get("/", (req, res) => {
-    foodEater.all("foods");
+    foodEater.all("foods", function(data){
+        const foods = {
+            foods: data,
+        }
+        res.render("index", foods);
+    })
 });
 // post route for adding new foods
 router.post("/api/foods", function(req, res) {
-    foodEater.create(req.body.food_name, "foods");
+    foodEater.create(req.body.food_name, "foods", function(data){
+        res.json({ id: data.insertId });
+    });
 });
 // put route for eating foods
 router.put("/api/foods/:id", (req, res) => {
-    foodEater.eat(req.body.food_name, "foods");
+    const idToEat = req.params.id;
+    foodEater.eat(idToEat, "foods", function(data){
+        if (data.changedRows == 0){
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });   
 });
 module.exports = router;

@@ -1,19 +1,20 @@
 const orm = require("../config/orm.js");
+const express = require('express');
 // foodEater to export the functions we use to create and eat the food
 const foodEater = {
-    all: (table) => {
+    all: (table, cb) => {
         orm.selectAll(table).then(data => {
-            console.log(data)
+            cb(data);
         });
     },
-    create: (item, table) => {
+    create: (item, table, cb) => {
         orm.insertOne(item, table).then(data => {
-            console.log(data);
+            cb(data);
         });
     },
-    eat: (item, table) => {
-        orm.eatOne(item, table).then(data => {
-            console.log(data);
+    eat: (itemId, table) => {
+        orm.eatOne(itemId, table).then(data => {
+            cb(data);
         });
     }
 };

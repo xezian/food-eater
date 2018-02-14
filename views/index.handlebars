@@ -1,0 +1,48 @@
+<h4 class="text-center">FOOD EATER</h4>
+    <div class="container">
+        <div class="row" id="foods">
+            <div class="col-sm-6">
+                <label for="uneaten">UNEATEN FOOD:</label>
+                <div id="uneaten">
+                    <ul>
+                        {{#each foods}}
+                            {{#unless eaten}}
+                                <p>Food: {{ this.food_name }}</p>
+                                <button type="button" class="btn btn-success" id="eat">
+                                    <h4>
+                                        <span class="glyphicon glyphicon-ice-lolly"></span> ---> Eat it! ---> 
+                                        <span class="glyphicon glyphicon-ice-lolly-tasted"></span>
+                                    </h4>
+                                </button>
+                            {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label for="eaten">EATEN FOOD:</label>
+                <div id="eaten">
+                    <ul>
+                        {{#each foods}}
+                            {{#if eaten}}
+                                <p>Food: {{this.food_name}}</p>
+                                <p>Eaten: {{this.eaten}}</p>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <label for="new-food">New Food:</label>
+            <input type="text" class="form-control" id="new-food">
+        </div>
+        <div class="row text-center">
+            <button type="button" class="btn btn-lg btn-warning" id="submit">
+                <h4>
+                    <span class="glyphicon glyphicon-hand-right"></span> ---> Click to Submit! <--- 
+                    <span class="glyphicon glyphicon-hand-left"></span>
+                </h4>
+            </button>
+        </div>
+    </div>
