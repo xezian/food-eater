@@ -1,0 +1,29 @@
+body {
+    background-image: url("/assets/images/supermarket.jpg"), url("/assets/images/Foods.jpg");
+    background-size: 88vw, 300px;
+    background-repeat: no-repeat, repeat;
+    background-position: center center, center 
+}
+.food-eater-header {
+    font-size: 13vw;
+    color: #ecffb4
+}
+.column-header {
+    font-size: 56px;
+    color:#ffb4ff;
+}
+.eat {
+    margin: 2px;
+    color: #630303;
+    background-color: #c7ffb4
+}
+.eaten {
+    margin: 2px;
+    color: #ecffb4;
+    background-color: #5f0571;
+}
+.new-food {
+    margin: 2px;
+    color: #052771;
+    background-color: #ffb4ff
+}

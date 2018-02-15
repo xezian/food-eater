@@ -12,7 +12,7 @@ const foodEater = {
             cb(data);
         });
     },
-    eat: (itemId, table) => {
+    eat: (itemId, table, cb) => {
         orm.eatOne(itemId, table).then(data => {
             cb(data);
         });
