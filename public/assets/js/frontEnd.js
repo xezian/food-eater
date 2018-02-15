@@ -1,6 +1,6 @@
-(function(){
+$(document).ready(function(){
     console.log("hello I am frontEnd.js");
-    $(document).on("click", "#submit", event => {
+    $("#submit").click(function(event) {
         event.preventDefault();
         const newFood = {
             food_name: $("#new-food").val().trim()

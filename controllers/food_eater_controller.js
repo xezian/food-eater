@@ -4,14 +4,14 @@ const router = express.Router();
 // get route for getting all foods
 router.get("/", (req, res) => {
     foodEater.all("foods", function(data){
-        const foods = {
+        const allFoods = {
             foods: data,
         }
-        res.render("index", foods);
+        res.render("index", allFoods);
     })
 });
 // post route for adding new foods
-router.post("/api/foods", function(req, res) {
+router.post("/api/foods", (req, res) => {
     foodEater.create(req.body.food_name, "foods", function(data){
         res.json({ id: data.insertId });
     });
