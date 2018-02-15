@@ -21,7 +21,6 @@ const orm = {
     },
     eatOne: (itemId, table) => {
         const queryString = "UPDATE " + table + " SET ? WHERE ?;";
-        console.log(queryString);
         const queryObj = [
             {
                 eaten: true,

@@ -14,9 +14,7 @@ $(document).ready(function(){
     });
     $(".eat").click(function(event) {
         event.preventDefault();
-        const id = $(this).attr("id");
-        console.log(id); 
-        $.ajax(`/api/foods/${id}`, {
+        $.ajax(`/api/foods/${$(this).attr("id")}`, {
             type: "PUT",
         }).then(function() {
             location.reload();
