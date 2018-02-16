@@ -10,7 +10,8 @@ if (process.env.JAWSDB_URL) {
   user: "root",
   password: "",
   database: "food_eater"
-});
+  });
+};
 
 connection.connect(function(err) {
   if (err) {
