@@ -1,4 +1,5 @@
 -- Schema for creating the food-eater database
+DROP DATABASE IF EXISTS food_eater;
 CREATE DATABASE food_eater;
 USE food_eater;
 
